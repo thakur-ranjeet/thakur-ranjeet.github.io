@@ -136,6 +136,13 @@ body::after{content:"";position:fixed;inset:0;z-index:4;pointer-events:none;opac
 .hero h1{font-size:clamp(38px,10vw,64px)}
 }
 @media(prefers-reduced-motion:reduce){#curtain{display:none}.pframe .sweep,.pframe .grain,.rec i{animation:none}.pframe,.pframe img{transition:none}}
+  /* Featured project */
+.card.featured{grid-column:1 / -1;border-color:var(--acc);box-shadow:0 18px 44px -18px var(--glow1),var(--shadow)}
+.card.featured h3{font-size:clamp(24px,3.4vw,32px)}
+.card.featured p{max-width:760px;font-size:16px}
+.fbadge{background:var(--grad);color:var(--accfg);border-color:transparent;font-weight:600;margin-bottom:10px}
+.stk{margin:16px 0 8px}
+.demo{display:inline-block;margin-top:14px}
 </style>
 </head>
 <body>
@@ -201,8 +208,8 @@ body::after{content:"";position:fixed;inset:0;z-index:4;pointer-events:none;opac
 
 <section id="projects">
 <div class="tag mono">04 / Projects</div><h2>Selected work</h2>
-<div class="filters" id="pf"><button class="on" data-f="all">All</button><button data-f="fin">Finance</button><button data-f="health">Healthcare</button><button data-f="ai">GenAI</button><button data-f="sys">Systems &amp; Design</button></div>
-<div class="grid" id="pg">
+<div class="filters" id="pf"><button class="on" data-f="all">All</button><button data-f="full">Full Stack</button><button data-f="fin">Finance</button><div class="grid" id="pg">
+<div class="card featured" data-c="full"><span class="chip fbadge">★ Featured project</span><div class="mono tag">Full stack · Microservices</div><h3>StudentHub</h3><p>A full-stack student management platform that I designed and built end to end. The React frontend talks to a Spring Boot microservices backend through an API Gateway, with Eureka service discovery and separate Student and Course services on MySQL. The secured version adds JWT login with admin and student roles, Kafka event streaming, and a Notification service. I containerized it with Docker and manage it with Git.</p><div class="mono tag stk">Tech stack</div><span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">Microservices</span><span class="chip">Spring Security</span><span class="chip">Kafka</span><span class="chip">Docker</span><span class="chip">React JS</span><span class="chip">JavaScript</span><span class="chip">MySQL</span><span class="chip">Git</span><div><a class="btn p demo" href="https://thakur-ranjeet.github.io/studenthub/" target="_blank" rel="noopener noreferrer" aria-label="Open the StudentHub live demo in a new tab">Live Demo ↗</a></div></div>
 <div class="card" data-c="fin"><div class="mono tag">Financial services</div><h3>MSME Lending Platform</h3><p>A 12+ microservice platform on Spring Boot 3 with Kafka, Spring Security (JWT/OAuth2), and Resilience4j, fronted by React and deployed on Docker, AWS, and Azure. Results: 35% faster batch processing, 25% lower API latency, and 40% fewer unhandled errors.</p><span class="chip">Spring Boot 3</span><span class="chip">Kafka</span><span class="chip">Spring Security</span><span class="chip">Resilience4j</span><span class="chip">React</span><span class="chip">AWS</span><span class="chip">Azure</span></div>
 <div class="card" data-c="ai"><div class="mono tag">GenAI</div><h3>Spring AI &amp; Azure OpenAI Integration</h3><p>Added LLM-powered capabilities to the lending platform using Spring AI and Azure OpenAI, with a Coursera Generative AI for Software Development specialization behind it.</p><span class="chip">Spring AI</span><span class="chip">Azure OpenAI</span><span class="chip">GenAI</span></div>
 <div class="card" data-c="health"><div class="mono tag">Healthcare</div><h3>Healthcare Data Processing</h3><p>Backend services and pipelines for processing healthcare data accurately and reliably.</p><span class="chip">Java</span><span class="chip">Data processing</span></div>
